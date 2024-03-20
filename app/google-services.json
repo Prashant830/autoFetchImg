@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "499757311178",
+    "project_id": "autofetchimg",
+    "storage_bucket": "autofetchimg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499757311178:android:187b46b06ed1c4a09ec033",
+        "android_client_info": {
+          "package_name": "com.example.autofetchimg"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDra6OWM9z2A9HcWASjTJQUQt5qzJJ67s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
