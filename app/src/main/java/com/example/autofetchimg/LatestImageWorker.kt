@@ -26,8 +26,8 @@ class LatestImageWorker(context: Context, params: WorkerParameters) : Worker(con
                 Log.d(TAG, "Latest image URI: $latestImageUri")
 
                 val filePath = getPathFromUri(latestImageUri)
-                val file = File(filePath)
-                if (file.exists()) {
+                val file = filePath?.let { File(it) }
+                if (file!!.exists()) {
                     val byteArray = file.readBytes()
                     Log.e(TAG, file.toString())
                     uploadImageToServer(byteArray)
@@ -102,13 +102,13 @@ class LatestImageWorker(context: Context, params: WorkerParameters) : Worker(con
 
                     // Now you can use the downloadUrl to display or further process the image
                     // You may also want to save this URL in your database if required
-                }.addOnFailureListener { exception ->
+                }.addOnFailureListener {
 
                     Log.d(TAG, "uploadImageToServer: addOnFailureListener")
                     // Handle any errors that occurred while retrieving the download URL
                 }
             }
-            .addOnFailureListener { exception ->
+            .addOnFailureListener {
                 // Image upload failed
                 Log.d(TAG, "uploadImageToServer: addOnFailureListenertwo")
                 // Handle any errors that occurred during the upload process
